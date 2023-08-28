@@ -1,0 +1,14 @@
+img {
+	width: 40px;
+	height: 40px;
+}
+
+.completed{
+	text-decoration: line-through;
+	text-decoration-color: grey;
+}
+
+.incomplete {
+	text-decoration-color: green;
+}
+

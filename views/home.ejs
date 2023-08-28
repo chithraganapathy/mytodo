@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/style.css">
+	<title>Our List</title>
+</head>
+<body>
+	<h3>Things Needed</h3>
+	<ul class="itemList">
+		<% for(let i = 0;i< todos.length;i++) { %>
+		<li data-id='<%=todos[i]._id%>'>
+			<span class="<%= todos[i].completed === true ? 'completed' : 'incomplete'%>"> <%=todos[i].todo %></span>
+		<img class="del" src="images/trash.jpeg" title="delete">
+		</li>
+		<% } %>
+	</ul>
+
+ 	<form action="/createTodo" method='POST'>
+        <input type="text" placeholder="Enter item" name='todoItem'>
+        <input type="submit">
+    </form>
+
+    <script src="js/client.js"></script>
+
+
+</body>
+</html>
+
+
+
