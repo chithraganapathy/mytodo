@@ -3,6 +3,7 @@ const app = express()
 const homeRoutes = require('./routes/home')
 const bodyParser = require('body-parser')
 const connectDB = require('./config/database')
+const defaultPORT = 3000
 require('dotenv').config({path: './config/.env'})
 connectDB();
 
@@ -13,6 +14,6 @@ app.use(express.json())
 
 app.use('/', homeRoutes)
 
-app.listen(process.env.PORT, ()=>{
+app.listen(defaultPORT || process.env.PORT, ()=>{
     console.log('Server is running...')
 })
